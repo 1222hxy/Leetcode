@@ -26,3 +26,27 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local credentials and private keys
+secrets/
+.secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Gitleaks reports (may contain sensitive findings)
+gitleaks-report*.json
+gitleaks-report*.sarif
+gitleaks-report*.csv
+gitleaks-report*.html
+
+# Local editor history
+.history/
+
+# Python tooling
+.ipynb_checkpoints/
+.tox/
+.nox/

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+if command -v gitleaks >/dev/null 2>&1; then
+    scanner=gitleaks
+elif [ -n "${LOCALAPPDATA:-}" ] && [ -f "$LOCALAPPDATA/Microsoft/WinGet/Links/gitleaks.exe" ]; then
+    scanner="$LOCALAPPDATA/Microsoft/WinGet/Links/gitleaks.exe"
+else
+    echo "Gitleaks is required. Install: winget install --id Gitleaks.Gitleaks --exact" >&2
+    exit 1
+fi
+exec "$scanner" git --pre-commit --staged --redact --no-banner --config .gitleaks.toml .

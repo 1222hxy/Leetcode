@@ -1,0 +1,4 @@
+title = "Leetcode secret scanning"
+
+[extend]
+useDefault = true

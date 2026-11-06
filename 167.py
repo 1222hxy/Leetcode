@@ -86,3 +86,19 @@ nums[left] 与当前范围内其他元素相加只会更小,
 在满足相应条件时, 双指针可以将某些 O(n^2) 的暴力搜索
 优化为 O(n), 同时将额外空间复杂度控制在 O(1).
 """
+
+class Solution2:
+    # 双指针
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        left = 0
+        right = len(numbers) -1
+
+        while True:
+            my_sum = numbers[left] + numbers[right]
+
+            if my_sum == target:
+                return [left + 1, right + 1]
+            elif my_sum < target:
+                left += 1
+            elif my_sum > target:
+                right -= 1

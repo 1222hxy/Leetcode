@@ -10,6 +10,3 @@ def t(l1, l2):
         num2 += bs * l2[y]
     print(num1, num2)
     return [int(num) for num in str(num1 + num2)][::-1]
-
-
-print(t([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]))

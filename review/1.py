@@ -8,3 +8,16 @@ class Solution:
                 return [i,cache[other]]
 
             cache[num] = i
+
+
+
+class Solution2:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        cache = {}
+
+        for i, num in enumerate(nums):
+            other = num - target
+            if other in cache:
+                return [i, cache[other]]
+
+            cache[num] = i

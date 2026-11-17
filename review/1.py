@@ -16,7 +16,7 @@ class Solution2:
         cache = {}
 
         for i, num in enumerate(nums):
-            other = num - target
+            other = target - num
             if other in cache:
                 return [i, cache[other]]
 
